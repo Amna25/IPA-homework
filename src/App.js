@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { FilmBox } from './containers/FilmBox';
+import  FilmBox  from './containers/FilmBox';
 
 function App() {
   return(
