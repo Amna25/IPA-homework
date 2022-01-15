@@ -2,15 +2,16 @@ import React from 'react'
 
 export const Film = ({film, onFavouritetoggle}) => {
 
-    if(!film)
-    return (
-        null
-    )
+    if(!film){
+    return  null   
+    }
+
+
     const handleClick = () => {
         onFavouritetoggle(film.id)
     }
 
-    const favouriteBtn = film.favourite ? "Remove from favourite" : "Add to favourite"
+    const favouriteBtn = film.favourite ? "Remove from favourites" : "Add to favourites"
 
     return(
         <>

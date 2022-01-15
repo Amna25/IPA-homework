@@ -2,7 +2,7 @@ import React from 'react'
 
 export const FilmItem = ({films, onSelectedFilms}) => {
 
-    const handleChange = (event) => {
+    const handleChange = event => {
         onSelectedFilms(event.target.value)
     }
     return (

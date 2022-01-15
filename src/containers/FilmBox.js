@@ -19,26 +19,28 @@ import Film from '../components/Film'
         .then(data => setFilms(data))
     }
 
-    const handleFilmSelected = (film) =>{
-        setSelectFilm(film)
+    const handleFilmSelected = id =>{
+        setSelectFilm(id)
     }
 
-    const handleFavouriteToggle = (film) => {
-        film = film.id
-        const upgradedFilm = [...films, film]
-        setFilms(upgradedFilm)
-
-
+    const handleFavouriteToggle = (id) => {
+        const updatedFilms = films.map((film) => {
+            if(film.id === id ){
+                film.favourite = !film.favourite
+            }
+            return film
+        })
+        setFilms(updatedFilms)
     }
 
     
-    const selectFilmA = films.find(film => film.id === selectFilm)
+    const selectedtFilm = films.find(film => film.id === selectFilm)
     return (
         <div>
             <h1> I am a Film Box</h1>
             <FilmItem  films={films}  onSelectedFilms={handleFilmSelected}/>
             <FavouriteFilm films={films} onFilmSelected={handleFilmSelected}/>
-            <Film film={selectFilmA} onFavouriteToggle = {handleFavouriteToggle}/>
+            <Film film={selectedtFilm } onFavouritetoggle= {handleFavouriteToggle}/>
 
            
         </div>
